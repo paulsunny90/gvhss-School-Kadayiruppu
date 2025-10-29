@@ -39,8 +39,11 @@ body{
     width: 450px;
     height: auto;
 }
+.border-vertical{
+    border-left: 1px white solid;
+}
 .grid-card{
-    background-color: aliceblue;
+    background-color: rgb(52, 51, 51);
     width: 100%;
     height: auto;
     
@@ -61,4 +64,37 @@ body{
 }
 .nav-img:hover{
     background-color: rgb(108, 227, 187);
+}
+.grid-card {
+  display: flex;
+  justify-content: center;
+}
+.game-board {
+    display: grid;
+    grid-template-rows: 300px 300px 300px;
+    grid-template-columns: 300px 300px 300px;
+    gap: 20px;
+    padding: 10%;
+    
+}
+.box {
+  background:white;
+  display: flex;
+  flex-direction: column;
+  gap: 2%;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  color: #070707;
+  border-radius: 10px;
+  box-shadow: rgba(244, 241, 241, 0.24) 0px 3px 8px;
+  
+}
+
+
+.Student-img{
+    background-color: #070707;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
 }
