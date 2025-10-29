@@ -90,11 +90,26 @@ body{
   box-shadow: rgba(244, 241, 241, 0.24) 0px 3px 8px;
   
 }
-
-
 .Student-img{
     background-color: #070707;
     width: 200px;
     height: 200px;
     border-radius: 50%;
+}
+.form{
+    display:flex;
+    
+    align-items: center;
+    justify-content: center;
+    padding: 10%;
+    background-color: white;
+
+}
+.form-container{
+    color: #070707;
+    display:block;  
+    width: 800px;
+    height: 700px;
+    background-color: aliceblue;
+    box-shadow: white 1px 1px 1px 1px ;
 }
