@@ -13,6 +13,12 @@ body{
     padding: 1%;
     
 }
+.empty{
+  text-align:center;
+  
+  font-size: 30px;
+  font-weight: bold;
+}
 .top-nav input{
     width: 600px;
     height: 40px;
@@ -96,20 +102,137 @@ body{
     height: 200px;
     border-radius: 50%;
 }
-.form{
-    display:flex;
-    
-    align-items: center;
-    justify-content: center;
-    padding: 10%;
-    background-color: white;
-
+.Student-img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
 }
-.form-container{
-    color: #070707;
-    display:block;  
-    width: 800px;
-    height: 700px;
-    background-color: aliceblue;
-    box-shadow: white 1px 1px 1px 1px ;
+
+
+.body-form {
+  background: #f3f4f6;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Wrapper for centering */
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Form Card */
+.form-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  padding: 30px 40px;
+  width: 870px;
+  transition: transform 0.2s ease;
+}
+
+.form-card:hover {
+  transform: translateY(-2px);
+}
+
+/* Heading */
+.form-card h2 {
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #111827;
+}
+
+/* Input group */
+#form div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+label {
+  font-size: 14px;
+  color: #374151;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+input {
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  outline: none;
+  font-size: 15px;
+  transition: all 0.2s ease;
+}
+
+input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+/* Button group */
+.buttons-all {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.buttons-all button {
+  width: 200px;
+  flex:1 ;
+  padding: 10px 0;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+/* Cancel button */
+.cancel {
+  background: #fff;
+  color: #111827;
+  border: 2px solid #d1d5db;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  width: 200px;
+}
+
+.cancel:hover {
+  background: #f3f4f6;
+}
+
+/* Submit button */
+.submit {
+  background: #2563eb;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+   width: 200px;
+}
+
+.submit:hover {
+  background: #1d4ed8;
+}
+.profile-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  width: 400px;
+  margin: 80px auto;
+  padding: 30px;
+  text-align: center;
+}
+
+.profile-card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
 }
