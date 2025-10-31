@@ -24,3 +24,16 @@
         window.location.href ="index.html";
       });
     });
+    function deleted(index){
+       const students = JSON.parse(localStorage.getItem("students")) || [];
+       students.splice(index,1)
+       localStorage.setItem("students",JSON.stringify(students));
+        window.location.href ="index.html";
+
+
+
+    }
+    function Edit( index){
+
+    }
+ 
