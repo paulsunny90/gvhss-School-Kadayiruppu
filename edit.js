@@ -10,6 +10,9 @@ let student = [
   { name: "submit", id: "submit", placeholder: "Submit", type: "submit" }
 ];
 
+const Param=new URLSearchParams(window.location.href)
+ console.log(Param.get('id'));
+ const index = Param.get('id')
 
 
 function setInputs() {
@@ -45,7 +48,7 @@ function setInputs() {
 
   document.getElementById("form").innerHTML = str;
 
-  // Handle image preview
+  //  image 
   const fileInput = document.getElementById("userImage");
   const preview = document.getElementById("preview-userImage");
 
@@ -59,20 +62,36 @@ function setInputs() {
       preview.src = "";
     }
   });
-
   // Cancel button
   document.getElementById("cancel").addEventListener("click", () => {
-    document.getElementById("form").reset();
-    preview.style.display = "none";
-    preview.src = "";
-    window.location.href = "../index.html";
+    window.location.href = index !== null ? `./profile.html?id=${index}` : "../index.html";
   });
+
+  // data editing
+  if (index !== null) {
+    const students = JSON.parse(localStorage.getItem("students")) || [];
+    const currentStudent = students[index];
+
+    if (currentStudent) {
+      document.getElementById("userName").value = currentStudent.userName || "";
+      document.getElementById("userID").value = currentStudent.userID || "";
+      document.getElementById("userDob").value = currentStudent.userDob || "";
+      document.getElementById("userClass").value = currentStudent.userClass || "";
+      document.getElementById("userEmail").value = currentStudent.userEmail || "";
+      document.getElementById("parentName").value = currentStudent.parentName || "";
+      document.getElementById("parentPhone").value = currentStudent.parentPhone || "";
+
+      if (currentStudent.pic) {
+        preview.src = currentStudent.pic;
+        preview.style.display = "block";
+      }
+    }
+  }
 }
-
-
 
 setInputs();
 
+// Add  Edi
 document.getElementById("form").addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -85,34 +104,40 @@ document.getElementById("form").addEventListener("submit", (e) => {
     }
   });
 
-  let fileInput = document.getElementById("userImage");
-  let file = fileInput.files[0];
+  const students = JSON.parse(localStorage.getItem("students")) || [];
+  const fileInput = document.getElementById("userImage");
+  const file = fileInput.files[0];
 
   if (file) {
-    let reader = new FileReader();
+    const reader = new FileReader();
     reader.onload = function(event) {
       obj.pic = event.target.result;
-      saveStudent(obj);
+      saveStudent(obj, students);
     };
     reader.readAsDataURL(file);
   } else {
-    obj.pic = "";
-    saveStudent(obj);
+    if (index !== null && students[index] && students[index].pic) {
+      obj.pic = students[index].pic; // Keep 
+    } else {
+      obj.pic = "";
+    }
+    saveStudent(obj, students);
   }
 });
 
-function saveStudent(studentObj) {
-  let students = JSON.parse(localStorage.getItem("students")) || [];
-  students.push(studentObj);
+// Save 
+function saveStudent(obj, students) {
+  if (index !== null && students[index]) {
+    students[index] = obj; // Update
+  } else {
+    students.push(obj); // Add 
+  }
   localStorage.setItem("students", JSON.stringify(students));
 
-  alert("Student data saved successfully!");
-   
-  window.location.href = "../index.html";
+  //  back 
+  if (index !== null) {
+    window.location.href = `./profile.html?&id=${index}`;
+  } else {
+    window.location.href = "../index.html";
+  }
 }
-
-
-
-
-
-

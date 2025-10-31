@@ -1,8 +1,10 @@
  window.addEventListener("DOMContentLoaded", () => {
       const students = JSON.parse(localStorage.getItem("students")) || [];
-      const index = localStorage.getItem("selectedStudentIndex");
+      // const index = localStorage.getItem("selectedStudentIndex");
       
-
+      const params = new URLSearchParams(window.location.href)
+      // console.log(params.get('id'));
+      const index = params.get('id')
       if (index === null || !students[index]) {
         document.body.innerHTML = "<h2 style='text-align:center'>No student found</h2>";
         return;
@@ -23,6 +25,12 @@
       document.getElementById("backBtn").addEventListener("click", () => {
         window.location.href ="index.html";
       });
+      
+      document.getElementById("edit").addEventListener("click",( )=>{
+      window.location.href=`./editfrn.html?&id=${index}`;
+
+    })
+ 
     });
     function deleted(index){
        const students = JSON.parse(localStorage.getItem("students")) || [];
@@ -33,7 +41,4 @@
 
 
     }
-    function Edit( index){
-
-    }
- 
+    

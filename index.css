@@ -224,6 +224,11 @@ input:focus {
 .submit:hover {
   background: rgb(108, 227, 187);
 }
+.show-img{
+  width: 200px;
+  height: 500px;
+  border-color: #000;
+}
 /* profile */
 .profile-body{
   background-color: white;
