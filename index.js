@@ -1,7 +1,7 @@
 window.addEventListener("DOMContentLoaded", () => {
   const cardsContainer = document.querySelector(".game-board");
   const students = JSON.parse(localStorage.getItem("students")) || []; 
-
+ 
   if (students.length === 0) {
     cardsContainer.innerHTML = "<p class='empty'>No student added yet.</p>";
     return;
@@ -21,8 +21,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
 function openProfile(index) {
-  localStorage.setItem("selectedStudentIndex", index);
-  window.location.href = "./pages/profile.html";
+  localStorage.setItem("selectedStudentIndex",index);
+  window.location.href = "profile.html";
 }
 
 
