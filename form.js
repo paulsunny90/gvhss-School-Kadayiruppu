@@ -46,25 +46,25 @@ function setInputs() {
   document.getElementById("form").innerHTML = str;
 
   // Handle image preview
-  const fileInput = document.getElementById("userImage");
-  const preview = document.getElementById("preview-userImage");
+  // const fileInput = document.getElementById("userImage");
+  // const preview = document.getElementById("preview-userImage");
 
-  fileInput.addEventListener("change", () => {
-    const file = fileInput.files[0];
-    if (file) {
-      preview.src = URL.createObjectURL(file);
-      preview.style.display = "block";
-    } else {
-      preview.style.display = "none";
-      preview.src = "";
-    }
-  });
+  // fileInput.addEventListener("change", () => {
+  //   const file = fileInput.files[0];
+  //   if (file) {
+  //     preview.src = URL.createObjectURL(file);
+  //     preview.style.display = "block";
+  //   } else {
+  //     preview.style.display = "none";
+  //     preview.src = "";
+  //   }
+  // });
 
   // Cancel button
   document.getElementById("cancel").addEventListener("click", () => {
     document.getElementById("form").reset();
-    preview.style.display = "none";
-    preview.src = "";
+    // preview.style.display = "none";
+    // preview.src = "";
     window.location.href = "../index.html";
   });
 }
@@ -110,9 +110,4 @@ function saveStudent(studentObj) {
    
   window.location.href = "../index.html";
 }
-
-
-
-
-
 
